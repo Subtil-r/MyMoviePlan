@@ -129,7 +129,7 @@ select {
 
 #deadline .poster-wrap div {
   height: 100%;
-  padding-left: 6px;
+  
 }
 
 #deadline .dlPoster {
@@ -157,6 +157,7 @@ select {
   background-color: #f9faf4;
   color: #222;
   font-weight: 700;
+  text-shadow: rgba(0, 0, 0, 0.1) 2px 2px;
 }
 
 #content-container {
