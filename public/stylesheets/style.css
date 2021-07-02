@@ -25,8 +25,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -56,7 +56,8 @@ picture {
 }
 
 /* Inherit fonts for inputs and buttons */
-input, #movie-search input[type=date],
+input,
+#movie-search input[type="date"],
 button,
 textarea,
 select {
@@ -70,8 +71,8 @@ select {
   }
 
   *,
-*::before,
-*::after {
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -124,12 +125,11 @@ select {
   top: -189px;
   width: 609px;
   height: 96%;
-  
 }
 
 #deadline .poster-wrap div {
   height: 100%;
-  
+  padding-left: 6px;
 }
 
 #deadline .dlPoster {
@@ -198,9 +198,9 @@ select {
 }
 
 #header-container i {
-position: relative;
-top: 10%;
-font-size: 120px;
+  position: relative;
+  top: 10%;
+  font-size: 120px;
 }
 
 #header-container h1 {
@@ -226,7 +226,8 @@ font-size: 120px;
   font-size: 18px;
   margin-bottom: 30px;
 }
-#movie-search input[type=text], #movie-search input[type=date] {
+#movie-search input[type="text"],
+#movie-search input[type="date"] {
   width: 600px;
   height: 51px;
   border: 1px solid #222;
@@ -239,7 +240,7 @@ font-size: 120px;
   font-variant: small-caps;
   text-shadow: rgba(0, 0, 0, 0.1) 2px 2px;
 }
-#movie-search input[type=date] {
+#movie-search input[type="date"] {
   width: 330px;
   font-weight: 500;
   letter-spacing: 6px;
@@ -250,7 +251,7 @@ font-size: 120px;
   margin: 0 auto 36px auto;
   box-shadow: rgba(0, 0, 0, 0.1) 4px 4px;
 }
-#movie-search .srch-btn input[type=button] {
+#movie-search .srch-btn input[type="button"] {
   flex-grow: 1;
   cursor: pointer;
   position: relative;
@@ -264,25 +265,30 @@ font-size: 120px;
   text-shadow: rgba(0, 0, 0, 0.1) 2px 2px;
   transition: flex-grow 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-#movie-search .srch-btn input[type=button] + input[type=button] {
+#movie-search .srch-btn input[type="button"] + input[type="button"] {
   border-left: 1px solid #222;
   margin-left: calc($border * -1);
 }
-#movie-search .srch-btn input[type=button]:hover, #movie-search .srch-btn input[type=button]:focus {
+#movie-search .srch-btn input[type="button"]:hover,
+#movie-search .srch-btn input[type="button"]:focus {
   flex-grow: 2;
   color: #f9faf4;
   outline: none;
   text-shadow: none;
   background-color: #f9a66c;
 }
-#movie-search .srch-btn input[type=button]:active {
+#movie-search .srch-btn input[type="button"]:active {
   transform: translateY(1px solid #222);
 }
 
-#saved-movie, #upcoming-movie, #release-movie {
+#saved-movie,
+#upcoming-movie,
+#release-movie {
   border-bottom: 1px solid #222;
 }
-#saved-movie .head-container, #upcoming-movie .head-container, #release-movie .head-container {
+#saved-movie .head-container,
+#upcoming-movie .head-container,
+#release-movie .head-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -290,7 +296,9 @@ font-size: 120px;
   justify-content: flex-start;
   gap: 24px;
 }
-#saved-movie .head-container h3, #upcoming-movie .head-container h3, #release-movie .head-container h3 {
+#saved-movie .head-container h3,
+#upcoming-movie .head-container h3,
+#release-movie .head-container h3 {
   font-family: "Saira Condensed", Tahoma, Verdana, sans-serif;
   font-weight: 700;
   font-variant: small-caps;
@@ -298,7 +306,9 @@ font-size: 120px;
   margin-top: -24px;
   color: #ffc94b;
 }
-#saved-movie .head-container button, #upcoming-movie .head-container button, #release-movie .head-container button {
+#saved-movie .head-container button,
+#upcoming-movie .head-container button,
+#release-movie .head-container button {
   position: relative;
   top: -9px;
   border: 1px solid #4a6163;
@@ -310,7 +320,9 @@ font-size: 120px;
   text-shadow: rgba(0, 0, 0, 0.1) 2px 2px;
   transition: 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-#saved-movie .head-container button:hover, #upcoming-movie .head-container button:hover, #release-movie .head-container button:hover {
+#saved-movie .head-container button:hover,
+#upcoming-movie .head-container button:hover,
+#release-movie .head-container button:hover {
   background-color: #4a6163;
   color: #f9faf4;
   font-weight: 700;
@@ -417,7 +429,8 @@ font-size: 120px;
   color: #fff2d2;
 }
 
-#modal-box, #modalDate {
+#modal-box,
+#modalDate {
   display: none;
   /* Hidden by default */
   position: fixed;
@@ -522,7 +535,8 @@ font-size: 120px;
   align-items: center;
   bottom: 0;
 }
-.card-full .right .infos, .card-full .right .credit {
+.card-full .right .infos,
+.card-full .right .credit {
   border: 1px solid #222;
   display: flex;
   flex-wrap: wrap;
@@ -538,12 +552,14 @@ font-size: 120px;
   background-color: #222;
   color: #f9faf4;
 }
-.card-full .right .infos span, .card-full .right .credit span {
+.card-full .right .infos span,
+.card-full .right .credit span {
   font-weight: 300;
   border-right: 1px solid #f9faf4;
   padding-right: 15px;
 }
-.card-full .right .infos .idiom span, .card-full .right .credit .idiom span {
+.card-full .right .infos .idiom span,
+.card-full .right .credit .idiom span {
   border-right: none;
 }
 .card-full .right .credit {
@@ -564,7 +580,8 @@ font-size: 120px;
   justify-content: space-between;
   align-items: stretch;
 }
-.card-full .right .trailer-wrap .graphic-left, .card-full .right .trailer-wrap .graphic-right {
+.card-full .right .trailer-wrap .graphic-left,
+.card-full .right .trailer-wrap .graphic-right {
   flex: 0 0 105px;
   border: 1px solid #222;
 }
@@ -589,7 +606,7 @@ font-size: 120px;
   line-height: 39px;
   letter-spacing: 1px;
 }
-#dateInput input[type=date] {
+#dateInput input[type="date"] {
   width: 250px;
   height: 45px;
   border: 1px solid #222;
@@ -622,5 +639,3 @@ font-size: 120px;
   border: none;
   font-weight: 700;
 }
-
-
