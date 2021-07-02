@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,
+  initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="static/scripts/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="static/scripts/slick/slick-theme.css"/> 
+
+ 
+
+
+  <link rel="stylesheet" type="text/css" href="static/stylesheets/style.css">
+  <title>My Movie Plan</title>
+</head>
+<body>
+  <main id="wrapper">
+
+    <section id="deadline">
+      <h2>This Week</h2>
+      <!-- <img src="https://picsum.photos/900/1000" alt="movie poster"> -->
+      <div></div>
+      <button id="this-week">check your saved movies for this week</button>
+    </section>
+
+    <section id="content-container">
+      
+      <header id="header-container">
+          <div><i class='bx bx-camera-movie'></i></div>
+        <h1 id="app-name">My Movie Plan</h1>
+      </header>
+
+      <div id="movie-search">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis praesentium voluptatum non nihil doloremque inventore. Tenetur expedita consectetur consequatur repellat, beatae accusamus natus iusto illum neque earum obcaecati ratione? Saepe.</p>
+        <input type="text" name="srch-mov" id="srch-mov">
+        <input type="date" name="srch-dt" id="srch-dt">
+        <div class="srch-btn">
+         <input type="button" value="title" id="btn-name">
+          <input type="button" value="genre" id="btn-genre">
+          <input type="button" value="date" id="btn-date"> 
+        </div>
+      </div>
+
+      <div id="movie-results"></div>
+
+      <div id="movie-home">
+
+        <div id="saved-movie" >
+          <div class="head-container">
+            <h3 class="title-container">your movies</h3>
+            <button id="view-all-db">view all</button>
+          </div>
+          
+            <div class="miniSave container-mini" id="container-saved"></div>
+          
+          
+
+            <!-- <div class="card-mini">
+              <img src="https://picsum.photos/900/1000" alt="movie poster" class="card-info">
+              <p class="title">title Lorem ipsum dolor sit amet consectetur.</p>
+              <div class="card-foot">
+                <p class="genre">genre</p>
+                <p class="rate">rate</p>
+                <i class='button add bx bx-plus-circle' id="add"></i>
+              </div>
+              <p class="date">DD/MM</p>
+            </div>
+
+            <div class="card-mini">
+              <img src="https://picsum.photos/900/1000" alt="movie poster" class="card-info">
+              <p class="title">title Lorem ipsum dolor sit amet consectetur.</p>
+              <div class="card-foot">
+                <p class="genre">genre</p>
+                <p class="rate">rate</p>
+                <i class='button add bx bx-plus-circle' id="add"></i>
+              </div>
+              <p class="date">DD/MM</p>
+            </div>
+
+            <div class="card-mini">
+              <img src="https://picsum.photos/900/1000" alt="movie poster" class="card-info">
+              <p class="title">title Lorem ipsum dolor sit amet consectetur.</p>
+              <div class="card-foot">
+                <p class="genre">genre</p>
+                <p class="rate">rate</p>
+                <i class='button add bx bx-plus-circle' id="add"></i>
+              </div>
+              <p class="date">DD/MM</p>
+            </div>
+
+            <div class="card-mini">
+              <img src="https://picsum.photos/900/1000" alt="movie poster" class="card-info">
+              <p class="title">title Lorem ipsum dolor sit amet consectetur.</p>
+              <div class="card-foot">
+                <p class="genre">genre</p>
+                <p class="rate">rate</p>
+                <i class='button add bx bx-plus-circle' id="add"></i>
+              </div>
+              <p class="date">DD/MM</p>
+            </div>
+
+            <div class="card-mini">
+              <img src="https://picsum.photos/900/1000" alt="movie poster" class="card-info">
+              <p class="title">title Lorem ipsum dolor sit amet consectetur.</p>
+              <div class="card-foot">
+                <p class="genre">genre</p>
+                <p class="rate">rate</p>
+                <i class='button add bx bx-plus-circle' id="add"></i>
+              </div>
+              <p class="date">DD/MM</p>
+            </div>
+
+            <div class="card-mini">
+              <img src="https://picsum.photos/900/1000" alt="movie poster" class="card-info">
+              <p class="title">title Lorem ipsum dolor sit amet consectetur.</p>
+              <div class="card-foot">
+                <p class="genre">genre</p>
+                <p class="rate">rate</p>
+                <i class='button add bx bx-plus-circle' id="add"></i>
+              </div>
+              <p class="date">DD/MM</p>
+            </div>
+
+            <div class="card-mini">
+              <img src="https://picsum.photos/900/1000" alt="movie poster" class="card-info">
+              <p class="title">title Lorem ipsum dolor sit amet consectetur.</p>
+              <div class="card-foot">
+                <p class="genre">genre</p>
+                <p class="rate">rate</p>
+                <i class='button add bx bx-plus-circle' id="add"></i>
+              </div>
+              <p class="date">DD/MM</p>
+            </div>
+
+            <div class="card-mini">
+              <img src="https://picsum.photos/900/1000" alt="movie poster" class="card-info">
+              <p class="title">title Lorem ipsum dolor sit amet consectetur.</p>
+              <div class="card-foot">
+                <p class="genre">genre</p>
+                <p class="rate">rate</p>
+                <i class='button add bx bx-plus-circle' id="add"></i>
+              </div>
+              <p class="date">DD/MM</p>
+            </div> -->
+
+            
+          </div>
+        </div>
+
+        <div id="release-movie" >
+          <div class="head-container">
+            <h3 class="title-container">now on theaters</h3>
+            <button id="view-all-db">view all</button>
+          </div>
+          
+          <div class="miniNow container-mini" id="nowContainer">
+            
+          </div>
+          
+
+        </div>
+
+        <div id="upcoming-movie" >
+          <div class="head-container">
+            <h3 class="title-container">upcoming movies</h3>
+            <button id="view-all-db">view all</button>
+          </div>
+          
+          <div class="miniUp container-mini" id="upContainer"></div>
+            
+          
+        </div>
+
+
+       <!--making the card to display full --> 
+      
+        <div id="modal-box">
+          
+         <!--  FULL CARD MODEL
+           
+          
+          
+          <div id="card-full">
+
+          <p class="title"><i class='bx bx-purchase-tag' ></i>Lorem ipsum dolor sit amet consectetur.</p>
+          <div class="left">
+            <img src="https://picsum.photos/900/1000" alt="poster" id="poster">
+            <div id="graphic-poster"><i class='bx bx-x-circle' ></i></div>
+          </div>
+
+          <div class="right">
+            
+            <p class="sinopse">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat earum, magnam cum saepe vitae, quas optio incidunt iste deserunt assumenda et facere amet porro, minima praesentium in veniam sit delectus!
+            Vitae corrupti iure sequi. Nobis reiciendis magni dolores enim maxime amet vitae, ad error ipsa recusandae delectus praesentium dolor laboriosam similique distinctio id perspiciatis quod illo, debitis, modi cum! Reiciendis.</p>
+            <div class="infos">
+              <p class="country"><i class='bx bx-world'></i>country: <span>country</span></p>
+              <p class="release-date"><i class='bx bx-calendar-event' ></i>date: <span>date</span></p>
+              <p class="duration"><i class='bx bx-time' ></i>duration: <span>time</span></p>
+              <p class="idiom"><i class='bx bx-message-rounded-detail'></i>idiom: <span>language</span></p>
+            </div>
+            <div class="credit">
+                <p class="director"><i class='bx bx-user' ></i>director: <span>director</span></p>
+                <p class="cast"><i class='bx bx-star' ></i>cast: <span>cast</span></p>
+              </div>
+              <div class="trailer-wrap">
+
+                <div class="graphic-left"></div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/c_dNIXwrbzY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="graphic-right"></div>
+
+              </div> -->
+              
+        </div>
+
+        <div id="modalDate">
+
+          <div id="dateInput" class="dateInput">
+            <h3>When you want to watch it ?</h3>
+            <input type="date" name="datePlan" id="datePlan">
+            <div class="btnGroup">
+              <button id="dateOk">Save</button>
+              <button id="dateCancel">Cancel</button>
+            </div>
+          </div>
+
+
+        </div>
+          
+          
+
+
+
+
+
+      </div>
+
+        </div>
+        
+
+        
+
+      </div>
+
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script  src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script  src="static/scripts/slick/slick.min.js"></script>
+  <script src="static/scripts/index.js"></script>
+  
+
+  
+
+
+</body>
+</html>

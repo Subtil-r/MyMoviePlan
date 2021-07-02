@@ -1,0 +1,626 @@
+@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* @function set-fnt($type, $weight: regular) {
+ @return map-get(map-get($fonts, $type), $weight);
+} */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, #movie-search input[type=date],
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* 
+#deadline {
+  border: 2px solid red;
+  flex: 0 0 33%;
+  height: 100vh;
+  h2 {
+    font-family: $title;
+  }
+} */
+#wrapper {
+  background-color: #f9faf4;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+#deadline {
+  border-right: 1px solid #222;
+  /* display: flex;
+  flex-direction: column; */
+  flex: 0 0 33%;
+  height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+#deadline h2 {
+  position: relative;
+  top: -69px;
+  display: inline;
+  font-family: "Saira Condensed", Tahoma, Verdana, sans-serif;
+  font-weight: 900;
+  color: #222;
+  font-size: 150px;
+  -webkit-text-stroke: 3px #f9faf4;
+  z-index: 1;
+  text-transform: capitalize;
+}
+#deadline div {
+  background-color: blue;
+  position: relative;
+  top: -189px;
+  width: 100%;
+  height: 96%;
+  background-image: url("https://picsum.photos/900/1000");
+  background-color: #cccccc;
+  /* Used if the image is unavailable */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+}
+#deadline img {
+  position: relative;
+  top: 0;
+  display: inline;
+  width: auto;
+  height: 100%;
+}
+#deadline button {
+  position: relative;
+  top: -300px;
+  z-index: 1;
+  border: 1px solid #f9faf4;
+  color: #f9faf4;
+  background-color: transparent;
+  font-size: 24px;
+  font-family: "Saira Condensed", Tahoma, Verdana, sans-serif;
+  font-variant: small-caps;
+  text-shadow: rgba(0, 0, 0, 0.1) 2px 2px;
+  transition: 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+#deadline button:hover {
+  background-color: #f9faf4;
+  color: #222;
+  font-weight: 700;
+}
+
+#content-container {
+  /* border: 2px solid blue; */
+  flex: 1 1;
+  height: 100vh;
+  padding: 33px;
+  /* height: 110%; */
+  margin-right: -18px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-right: 18px;
+  padding-bottom: 150px;
+  position: relative;
+}
+
+#header-container {
+  position: sticky;
+  top: -36px;
+  padding-top: 18px;
+  z-index: 1;
+  background-color: #f9faf4;
+  margin-bottom: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+#header-container div {
+  background-color: #ffc94b;
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+#header-container i {
+position: relative;
+top: 10%;
+font-size: 120px;
+}
+
+#header-container h1 {
+  font-family: "Saira Condensed", Tahoma, Verdana, sans-serif;
+  font-weight: 700;
+  color: #222;
+  font-size: 120px;
+  letter-spacing: 3px;
+}
+
+#movie-search {
+  padding-top: 36px;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  margin-bottom: 18px;
+  color: #222;
+  text-align: center;
+}
+#movie-search p {
+  font-family: "Roboto Slab", "Courier New", Courier, monospace;
+  font-weight: 500;
+  color: #4a6163;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+#movie-search input[type=text], #movie-search input[type=date] {
+  width: 600px;
+  height: 51px;
+  border: 1px solid #222;
+  background-color: #f9faf4;
+  color: #4a6163;
+  padding: 0 18px;
+  margin: 0 9px 18px 0;
+  font-family: "Roboto Slab", "Courier New", Courier, monospace;
+  font-size: 27px;
+  font-variant: small-caps;
+  text-shadow: rgba(0, 0, 0, 0.1) 2px 2px;
+}
+#movie-search input[type=date] {
+  width: 330px;
+  font-weight: 500;
+  letter-spacing: 6px;
+}
+#movie-search .srch-btn {
+  display: flex;
+  width: 60%;
+  margin: 0 auto 36px auto;
+  box-shadow: rgba(0, 0, 0, 0.1) 4px 4px;
+}
+#movie-search .srch-btn input[type=button] {
+  flex-grow: 1;
+  cursor: pointer;
+  position: relative;
+  padding: calc($space / 1.125) 1rem 1rem;
+  border: 1px solid #222;
+  color: #222;
+  background-color: transparent;
+  font-size: 24px;
+  font-family: "Saira Condensed", Tahoma, Verdana, sans-serif;
+  text-transform: lowercase;
+  text-shadow: rgba(0, 0, 0, 0.1) 2px 2px;
+  transition: flex-grow 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+#movie-search .srch-btn input[type=button] + input[type=button] {
+  border-left: 1px solid #222;
+  margin-left: calc($border * -1);
+}
+#movie-search .srch-btn input[type=button]:hover, #movie-search .srch-btn input[type=button]:focus {
+  flex-grow: 2;
+  color: #f9faf4;
+  outline: none;
+  text-shadow: none;
+  background-color: #f9a66c;
+}
+#movie-search .srch-btn input[type=button]:active {
+  transform: translateY(1px solid #222);
+}
+
+#saved-movie, #upcoming-movie, #release-movie {
+  border-bottom: 1px solid #222;
+}
+#saved-movie .head-container, #upcoming-movie .head-container, #release-movie .head-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+#saved-movie .head-container h3, #upcoming-movie .head-container h3, #release-movie .head-container h3 {
+  font-family: "Saira Condensed", Tahoma, Verdana, sans-serif;
+  font-weight: 700;
+  font-variant: small-caps;
+  font-size: 60px;
+  margin-top: -24px;
+  color: #ffc94b;
+}
+#saved-movie .head-container button, #upcoming-movie .head-container button, #release-movie .head-container button {
+  position: relative;
+  top: -9px;
+  border: 1px solid #4a6163;
+  color: #4a6163;
+  background-color: transparent;
+  font-size: 24px;
+  font-family: "Roboto Slab", "Courier New", Courier, monospace;
+  font-variant: small-caps;
+  text-shadow: rgba(0, 0, 0, 0.1) 2px 2px;
+  transition: 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+#saved-movie .head-container button:hover, #upcoming-movie .head-container button:hover, #release-movie .head-container button:hover {
+  background-color: #4a6163;
+  color: #f9faf4;
+  font-weight: 700;
+}
+
+#release-movie .head-container {
+  margin-top: 18px;
+}
+#release-movie .head-container h3 {
+  color: #f9a66c;
+}
+#release-movie .card-mini .date {
+  background-color: #f9a66c;
+}
+
+#upcoming-movie {
+  border: none;
+  margin-bottom: -150px;
+}
+#upcoming-movie .head-container {
+  margin-top: 18px;
+}
+#upcoming-movie .head-container h3 {
+  color: #4a6163;
+}
+#upcoming-movie .card-mini .date {
+  background-color: #4a6163;
+}
+
+.container-mini {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 114px;
+}
+
+.card-mini {
+  position: relative;
+  flex: 0 0 21%;
+  border: 1px solid #222;
+  width: 210px;
+  height: 406px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.card-mini img {
+  width: 210px;
+  height: 300px;
+  margin-bottom: 9px;
+  transition: 0.3s;
+}
+.card-mini img:hover {
+  opacity: 0.2;
+}
+.card-mini .title {
+  font-family: "Saira Condensed", Tahoma, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 21px;
+}
+.card-mini .date {
+  display: inline;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #ffc94b;
+  padding: 6px;
+  font-family: "Saira Condensed", Tahoma, Verdana, sans-serif;
+  font-weight: 700;
+  color: #f9faf4;
+  letter-spacing: 3px;
+}
+.card-mini .card-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: "Saira Condensed", Tahoma, Verdana, sans-serif;
+  font-variant: small-caps;
+  font-size: 18px;
+  letter-spacing: 3px;
+  color: #4a6163;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.card-mini .card-foot .genre {
+  border-right: 1px solid #222;
+  padding-right: 15px;
+}
+.card-mini .card-foot .rate {
+  border-right: 1px solid #222;
+  padding-right: 15px;
+}
+.card-mini .card-foot .add {
+  font-size: 36px;
+  /* margin-right: 6px; */
+  color: #ffc94b;
+}
+.card-mini .card-foot .add:hover {
+  color: #fff2d2;
+}
+
+#modal-box, #modalDate {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+  text-align: center;
+}
+
+.card-full {
+  background-color: #f9faf4;
+  margin: auto;
+  width: 1200px;
+  border: 1px solid #222;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 18px;
+  color: #222;
+  /* modal content */
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.card-full .title {
+  flex: 0 0 100%;
+  font-family: "Saira Condensed", Tahoma, Verdana, sans-serif;
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 45px;
+  margin-bottom: 15px;
+  letter-spacing: 3px;
+  text-align: left;
+}
+.card-full .title i {
+  margin-right: 15px;
+  font-size: 45px;
+}
+.card-full .left {
+  flex: 0 0 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-full .left #graphic-poster {
+  flex: 1 1 auto;
+  height: 39px;
+  /* 120px */
+  background-color: #222;
+  text-align: center;
+  margin-top: 15px;
+  /* i {
+    margin-top:30px;
+    font-size: 66px;
+    color: set-clr(light-gray-color)
+  }
+  &:hover{
+    background-color: set-clr(gray-color);
+  } */
+}
+.card-full .right {
+  flex: 0 0 70%;
+  text-align: center;
+  color: #4a6163;
+  position: relative;
+}
+.card-full .right .sinopse {
+  font-family: "Roboto Slab", "Courier New", Courier, monospace;
+  font-weight: 300;
+  text-align: left;
+  margin-bottom: 9px;
+}
+.card-full .right .info-position {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+}
+.card-full .right .infos, .card-full .right .credit {
+  border: 1px solid #222;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 100%;
+  justify-content: space-evenly;
+  padding: 6px;
+  font-family: "Roboto Slab", "Courier New", Courier, monospace;
+  font-variant: small-caps;
+  font-weight: 600;
+  letter-spacing: 3px;
+  background-color: #222;
+  color: #f9faf4;
+}
+.card-full .right .infos span, .card-full .right .credit span {
+  font-weight: 300;
+  border-right: 1px solid #f9faf4;
+  padding-right: 15px;
+}
+.card-full .right .infos .idiom span, .card-full .right .credit .idiom span {
+  border-right: none;
+}
+.card-full .right .credit {
+  justify-content: space-around;
+  background-color: transparent;
+  color: #222;
+  margin-bottom: 12px;
+}
+.card-full .right .credit span {
+  border-right: none;
+}
+.card-full .right .trailer-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 100%;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.card-full .right .trailer-wrap .graphic-left, .card-full .right .trailer-wrap .graphic-right {
+  flex: 0 0 105px;
+  border: 1px solid #222;
+}
+
+#dateInput {
+  background-color: #f9faf4;
+  border: 1px solid #222;
+  font-family: "Saira Condensed", Tahoma, Verdana, sans-serif;
+  font-variant: small-caps;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#dateInput h3 {
+  text-align: center;
+  font-size: 39px;
+  line-height: 39px;
+  letter-spacing: 1px;
+}
+#dateInput input[type=date] {
+  width: 250px;
+  height: 45px;
+  border: 1px solid #222;
+  background-color: #f9faf4;
+  color: #4a6163;
+  padding: 0 18px;
+  margin: 0 9px 18px 0;
+  font-family: "Roboto Slab", "Courier New", Courier, monospace;
+  font-size: 18px;
+  font-variant: small-caps;
+  text-shadow: rgba(0, 0, 0, 0.1) 2px 2px;
+  font-weight: 500;
+  letter-spacing: 6px;
+}
+#dateInput button {
+  width: 90px;
+  margin: 0 6px;
+  border: 1px solid #222;
+  color: #4a6163;
+  background-color: transparent;
+  font-size: 24px;
+  font-family: "Saira Condensed", Tahoma, Verdana, sans-serif;
+  font-variant: small-caps;
+  text-shadow: rgba(0, 0, 0, 0.1) 2px 2px;
+  transition: 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+#dateInput button:hover {
+  background-color: #ffc94b;
+  color: #222;
+  border: none;
+  font-weight: 700;
+}
+
+
