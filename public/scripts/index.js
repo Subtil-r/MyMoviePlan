@@ -37,20 +37,6 @@ const myModal = () => {
 }
 
 
-
-// Slide carousel
-/* const slide = (time) => {
-  $(document).ready(function(){
-    $('.miniSlide').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: time,
-      
-    });
-  });
-}; */
-
 //adding movie to db
 const addMovie = () => {
 
@@ -204,7 +190,7 @@ const displayMoviesDB = () => {
 })
 .then(response => response.json())
 .then(data => {
-  console.log('Success:', data);
+  //console.log('Success:', data);
   dispMovContainer(data.data);
 })
 .catch(error => {
@@ -212,6 +198,50 @@ const displayMoviesDB = () => {
 });
 };
 
+//show movies 7 days from the inputed date
+const dlMoviesDB = () => {
+
+  fetch('api/dl/movie', {
+    method: 'POST', // or 'PUT'
+    headers: {
+      'Content-Type': 'application/json',
+    }
+})
+.then(response => response.json())
+.then(data => {
+  console.log('Success:', data);
+  dlPosterDB(data.data)
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+};
+
+const dlPosterDB = (poster) => {
+
+  poster.forEach((img) => {
+
+    //generating full card to display on modal
+    let containerDL = document.querySelector('.poster-wrap');
+
+    let posterDL = `<div><img src="${img.poster}" alt="poster" class="dlPoster"></div>`;
+
+    containerDL.insertAdjacentHTML('beforeend', posterDL);
+
+  })
+  
+  $(document).ready(function(){
+    $('.poster-wrap').slick({
+      infinite: true,
+      speed: 500,
+      fade: true,
+      cssEase: 'linear',
+      autoplay: true,
+      arrows: false 
+    });
+  });  
+  
+};
 
 
 //converting genre number to name
@@ -405,7 +435,7 @@ const upComingMovie = () => {
 nowMovie();
 upComingMovie();
 displayMoviesDB();
-
+dlMoviesDB();
 
 
 //carousel

@@ -26,6 +26,8 @@ app.post('/api/add/movie', (req, res) => {
 //show movies from db
 app.post('/api/show/movie', myFirstController.showMovies);
 
+app.post('/api/dl/movie', myFirstController.dlMovies);
+
 
 app.listen(process.env.PORT || 3000, () => console.log("Server Up and running"));
 

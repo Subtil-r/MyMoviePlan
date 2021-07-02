@@ -35,7 +35,7 @@ const showMovies = (req, res) => {
   });
 
   db.serialize(() => {
-    db.each(`SELECT * FROM movie`, (err, row) => {
+    db.each(`SELECT * FROM movie ORDER BY date_plan ASC`, (err, row) => {
       if (err) {
         console.error(err.message);
       }
@@ -54,3 +54,36 @@ const showMovies = (req, res) => {
 };
 
 exports.showMovies = showMovies;
+
+const dlMovies = (req, res) => {
+
+  let dataMovie = {data: []};
+
+  // open the database
+  let db = new sqlite3.Database('./db/db.movielistdb', (err) => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log('Connected to the movielist database.');
+  });
+
+  db.serialize(() => {
+    db.each(`SELECT * FROM movie WHERE DATE('now', '+7 day') >= date_plan`, (err, row) => {
+      if (err) {
+        console.error(err.message);
+      }
+      console.log(row);
+      dataMovie.data.push(row)
+    });
+  });
+
+  db.close((err) => {
+    if (err) {
+      console.error(err.message);
+    }
+    res.send(dataMovie);
+    console.log('Close the database connection.');
+  });
+};
+
+exports.dlMovies = dlMovies;
